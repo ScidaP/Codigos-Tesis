@@ -10,7 +10,9 @@ echo "Medición de Memoria..."
 
 vmstat 1 5 > resultados/memoria_vmstat.txt
 lat_mem_rd 128M 512 > resultados/memoria_latencia.txt 2>&1
-stream > resultados/memoria_throughput.txt 2>&1
+
+echo "Medición de Throughput de Memoria con sysbench..."
+sysbench memory --memory-block-size=1M --memory-total-size=128M run > resultados/memoria_throughput.txt 2>&1
 
 echo "Medición de Almacenamiento (fio)..."
 fio --name=test-readwrite --rw=randrw --bs=4k --size=100M --numjobs=1 --runtime=10 --group_reporting > resultados/almacenamiento_fio.txt
