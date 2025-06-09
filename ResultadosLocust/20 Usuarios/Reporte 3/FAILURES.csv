@@ -1,0 +1,6 @@
+Method,Name,Error,Occurrences
+GET,/Mesas,RemoteDisconnected('Remote end closed connection without response'),2
+GET,/Pedidos/296,RemoteDisconnected('Remote end closed connection without response'),8
+GET,/Categorias,RemoteDisconnected('Remote end closed connection without response'),10
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 1 en mesa 9'),1
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 2 en mesa 4'),1
