@@ -1,0 +1,4 @@
+Method,Name,Error,Occurrences
+GET,/Mesas,RemoteDisconnected('Remote end closed connection without response'),3
+GET,/Pedidos/296,RemoteDisconnected('Remote end closed connection without response'),4
+GET,/Categorias,RemoteDisconnected('Remote end closed connection without response'),3

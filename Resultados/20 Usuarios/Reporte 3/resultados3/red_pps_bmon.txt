@@ -1,0 +1,10 @@
+Interfaces                               RX bps         pps      %    TX bps         pps      %
+  enp0s31f6                                   0           0                0           0       
+Interfaces                               RX bps         pps      %    TX bps         pps      %
+  enp0s31f6                                9.65KiB       64            18.83KiB       60       
+Interfaces                               RX bps         pps      %    TX bps         pps      %
+  enp0s31f6                                9.21KiB       61            16.88KiB       57       
+Interfaces                               RX bps         pps      %    TX bps         pps      %
+  enp0s31f6                                9.09KiB       60            17.14KiB       56       
+Interfaces                               RX bps         pps      %    TX bps         pps      %
+  enp0s31f6                                9.40KiB       60            16.25KiB       56       
