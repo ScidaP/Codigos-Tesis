@@ -1,4 +1,0 @@
-Method,Name,Error,Occurrences
-GET,/Pedidos/296,RemoteDisconnected('Remote end closed connection without response'),3
-GET,/Categorias,RemoteDisconnected('Remote end closed connection without response'),11
-POST,Agregar Item,CatchResponseError('Fallo al agregar item 2 en mesa 5'),1
