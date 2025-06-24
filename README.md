@@ -6,15 +6,13 @@ La tesis trata sobre montar una aplicación web en distintos servidores físicos
 
 Finalmente, se reune toda la información para concluir acerca de la mejor opción para montar un servidor. 
 
-### Notas archivos
+### Aclaraciones archivos importantes
 
 1. **pruebaEstres.py**
   - Este código se ejecuta en una computadora cliente. Aquí aprovecho la herramienta `Locust`, la cual me permite simular tráfico en mi aplicación. Puedo ajustar la cantidad de usuarios, los endpoints solicitados y la frecuencia de las peticiones a cada uno.
 2. **BUCLE.sh**
   - Este código se ejecuta en el servidor (mediante SSH). Ejecuta los archivos guardados en **benchmarks/**: `almacenamiento.sh`, `cpu.sh`, `memoria_latencia.sh`, `memoria_throughput.sh`, `memoria_vmstat.sh`, `red_iperf.sh`, `red_mtr.sh` y `red_pps_bmon.sh`, los cuales usan herramientas como `perf`, `htop`, `lat_mem_rd`, `stream`, `vmstat`, `fio`, `iperf3`, `mtr` y `bmon`. El script guarda los resultados en archivos CSV separados en la carpeta indicada por parámetro.
   - Forma correcta de correr el código: `./BUCLE.sh NOMBRE_CARPETA CANTIDAD_MUESTRAS` donde NOMBRE_CARPETA indica el nombre de la carpeta donde se van a guardar los CSV, y CANTIDAD_MUESTRAS indica la cantidad de veces que se van a ejecutar todos los scripts.
-3. **reporte_recursos.sh**
-  - Este código se ejecuta en el servidor (mediante SSH). Lee los archivos de texto guardados en `resultados/` y los imprime por pantalla de manera ordenada, para una mejor visualización.
 
 ## Motivación
 
