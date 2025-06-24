@@ -29,7 +29,7 @@ class DemoUser(HttpUser):
 
     @task(3)
     def ver_pedido(self):
-        self.client.get(f"Pedidos/296")
+        self.client.get(f"Pedidos/5925")
 
     @task(4)
     def flujo_completo_mesa(self):

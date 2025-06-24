@@ -19,5 +19,5 @@ for i in $(seq 1 $2); do
 done
 
 echo ""
-echo "🎉 Finalizadas las 10 corridas de benchmark"
+echo "🎉 Finalizadas las $2 corridas de benchmark"
 echo "📄 Resultados disponibles en: $CARPETA_RESULTADOS"
