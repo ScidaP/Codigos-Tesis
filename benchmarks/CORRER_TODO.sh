@@ -20,9 +20,7 @@ echo ""
 
 # === MEMORIA ===
 echo "➡️  Ejecutando benchmarks de MEMORIA..."
-./memoria_vmstat.sh "$CARPETA_RESULTADOS" "$RUN_ID"
-./memoria_latencia.sh "$CARPETA_RESULTADOS" "$RUN_ID"
-./memoria_throughput.sh "$CARPETA_RESULTADOS" "$RUN_ID"
+./memoria.sh "$CARPETA_RESULTADOS" "$RUN_ID"
 echo "✅ Benchmarks de MEMORIA completados."
 echo ""
 
@@ -34,9 +32,7 @@ echo ""
 
 # === RED ===
 echo "➡️  Ejecutando benchmarks de RED..."
-./red_iperf.sh "$CARPETA_RESULTADOS" "$RUN_ID"
-./red_mtr.sh "$CARPETA_RESULTADOS" "$RUN_ID"
-./red_pps_bmon.sh "$CARPETA_RESULTADOS" "$RUN_ID"
+./red.sh "$CARPETA_RESULTADOS" "$RUN_ID"
 echo "✅ Benchmarks de RED completados."
 echo ""
 
