@@ -36,7 +36,7 @@ plt.figure(figsize=(14, 6))
 for m in metricas:
     plt.plot(x, promedios[m], marker='o', label=m)
 
-plt.title("Cache References y Cache Misses según cantidad de usuarios")
+plt.title("Cache References y Cache Misses - 20 muestras por cantidad de usuario")
 plt.xlabel("Cantidad de Usuarios Simultáneos")
 plt.ylabel("Valor Promedio Absoluto")
 plt.xticks(x, usuarios, rotation=45)

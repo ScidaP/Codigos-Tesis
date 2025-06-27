@@ -41,7 +41,7 @@ plt.figure(figsize=(14, 6))
 for m, label in metricas.items():
     plt.plot(x, promedios[m], marker='o', label=label)
 
-plt.title("Métricas de tiempo promedio del CPU según cantidad de usuarios")
+plt.title("Métricas de tiempo promedio del CPU - 20 muestras por cantidad de usuario")
 plt.xlabel("Cantidad de Usuarios Simultáneos")
 plt.ylabel("Valor Promedio")
 plt.xticks(x, usuarios, rotation=45)

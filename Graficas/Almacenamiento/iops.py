@@ -50,7 +50,7 @@ for m, label in metricas.items():
         if val is not None:
             plt.annotate(f'{val:.0f}', (x[i], val), textcoords="offset points", xytext=(10, 10), ha='center', fontsize=9)
 
-plt.title("Operaciones de I/O por segundo (IOPS)")
+plt.title("Operaciones de I/O por segundo (IOPS) - 20 muestras por cantidad de usuario")
 plt.xlabel("Cantidad de Usuarios Simultáneos")
 plt.ylabel("IOPS promedio")
 plt.xticks(x, usuarios, rotation=45)

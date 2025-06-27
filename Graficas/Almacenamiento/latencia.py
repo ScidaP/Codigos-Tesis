@@ -41,7 +41,7 @@ plt.figure(figsize=(14, 6))
 for m, label in metricas_latencia.items():
     plt.plot(x, promedios[m], marker='o', linestyle='-', label=label)
 
-plt.title("Latencias promedio de lectura y escritura")
+plt.title("Latencias promedio de lectura y escritura - 20 muestras por cantidad de usuario")
 plt.xlabel("Cantidad de Usuarios Simultáneos")
 plt.ylabel("Latencia (ms)")
 plt.xticks(x, usuarios, rotation=45)

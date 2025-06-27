@@ -69,7 +69,7 @@ lines1, labels1 = ax1.get_legend_handles_labels()
 lines2, labels2 = ax2.get_legend_handles_labels()
 ax1.legend(lines1 + lines2, labels1 + labels2, loc='upper left')
 
-plt.title("Cycles, Instructions e IPC según cantidad de usuarios")
+plt.title("Cycles, Instructions e IPC - 20 muestras por cantidad de usuario")
 plt.tight_layout()
 #plt.savefig("grafico_cycles_instructions_ipc.png")
 plt.show()

@@ -43,7 +43,7 @@ plt.figure(figsize=(14, 6))
 for m, label in metricas.items():
     plt.plot(x, promedios[m], marker='s', label=label)
 
-plt.title("Ancho de banda de lectura/escritura")
+plt.title("Ancho de banda de lectura/escritura - 20 muestras por cantidad de usuario")
 plt.xlabel("Cantidad de Usuarios Simultáneos")
 plt.ylabel("MB/s promedio")
 plt.xticks(x, usuarios, rotation=45)
