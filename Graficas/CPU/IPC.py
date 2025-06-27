@@ -58,7 +58,7 @@ def formato_multiplicador(x, _):
     return f"{x:.2f} × 10¹⁰"
 
 ax1.yaxis.set_major_formatter(ticker.FuncFormatter(formato_multiplicador))
-ax1.set_ylabel("Valor Promedio (cycles / instructions)")
+ax1.set_ylabel("Valor Promedio de ciclos e instrucciones")
 ax1.set_xlabel("Cantidad de Usuarios Simultáneos")
 ax1.set_xticks(x)
 ax1.set_xticklabels(usuarios, rotation=45)
