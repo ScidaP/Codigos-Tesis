@@ -5,7 +5,7 @@ RUN_ID=$2
 
 # Crear archivo con encabezado si no existe
 if [ ! -f "$archivo" ]; then
-  echo "run;latencia_ms_promedio;threads;block_size;total_size;total_operations;total_time_s;min_latency_ms;avg_latency_ms;max_latency_ms;swpd_avg;free_avg;buff_avg;cache_avg;si_avg;so_avg" > "$archivo"
+  echo "run;latencia_ms_promedio;threads;block_size;total_size;total_operations;total_time_s;min_latency_ms;avg_latency_ms;max_latency_ms;swpd_avg;free_avg;buff_avg;cache_avg;si_avg;so_avg;mem_used;mem_free" > "$archivo"
 fi
 
 ### === 1. lat_mem_rd ===
@@ -49,5 +49,9 @@ END {
   printf "%.0f %.0f %.0f %.0f %.0f %.0f", swpd/NR, free/NR, buff/NR, cache/NR, si/NR, so/NR
 }')
 
+### === 3. free ===
+
+read mem_used mem_free <<< $(free -m | awk '/^Mem:/ {print $3, $4}')
+
 ### === Guardar todos los datos en una línea ===
-echo "$RUN_ID;$lat_ms_promedio;$threads;$block_size;$total_size;$total_operations;$total_time;$min_latency;$avg_latency;$max_latency;$swpd;$free;$buff;$cache;$si;$so" >> "$archivo"
+echo "$RUN_ID;$lat_ms_promedio;$threads;$block_size;$total_size;$total_operations;$total_time;$min_latency;$avg_latency;$max_latency;$swpd;$free;$buff;$cache;$si;$so;$mem_used;$mem_free" >> "$archivo"
