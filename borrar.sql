@@ -1,0 +1,1 @@
+DELETE FROM "Pedidos" WHERE "Id"<>5925;
