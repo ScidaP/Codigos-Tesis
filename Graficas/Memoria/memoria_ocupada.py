@@ -1,13 +1,16 @@
 import os
+import sys
 import pandas as pd
 import matplotlib.pyplot as plt
 
-usuarios = [15, 20, 40, 60, 100, 200, 500, 1000, 2000]
-base_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'Resultados')
+usuarios = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
+nombre_carpeta = sys.argv[1]
+base_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../Resultados/', nombre_carpeta)
 
 # Columnas que vamos a graficar
 latencias = {
-    'free_avg': 'Memoria sin asignar',
+    'mem_free': 'Memoria sin asignar',
+    'mem_used': 'Memoria en uso'
 }
 promedios = {k: [] for k in latencias}
 
@@ -24,7 +27,7 @@ for u in usuarios:
 
     for col in latencias:
         try:
-            df[col] = (df[col].astype(float)/1024)/1024
+            df[col] = df[col].astype(float)
             promedios[col].append(df[col].mean())
         except Exception as e:
             print(f"❌ Error con columna '{col}' en archivo {u} usuarios: {e}")
@@ -39,12 +42,13 @@ for k, label in latencias.items():
     y = promedios[k]
     plt.plot(x, y, marker='o', label=label)
 
-plt.title("Memoria sin asignar en RAM en KB")
+plt.title("Memoria en Uso en MB")
 plt.xlabel("Cantidad de Usuarios Simultáneos")
-plt.ylabel("GB")
+plt.ylabel("MB")
 plt.xticks(x, usuarios)
 plt.grid(True)
 plt.legend()
 plt.tight_layout()
-plt.show()
-#plt.savefig("Memoria-Latencia.png")
+
+os.makedirs(nombre_carpeta, exist_ok=True) 
+plt.savefig(nombre_carpeta + "/Memoria-Ocupada.png")

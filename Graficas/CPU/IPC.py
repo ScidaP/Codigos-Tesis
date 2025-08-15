@@ -1,10 +1,12 @@
 import os
+import sys
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 
-usuarios = [15, 20, 40, 60, 100, 200, 500, 1000, 2000]
-base_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../', 'Resultados')
+usuarios = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
+nombre_carpeta = sys.argv[1]
+base_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../Resultados/', nombre_carpeta)
 
 metricas = ['cycles', 'instructions']
 promedios = {m: [] for m in metricas}
@@ -71,4 +73,6 @@ ax1.legend(lines1 + lines2, labels1 + labels2, loc='upper left')
 
 plt.title("Cycles, Instructions e IPC - 20 muestras por cantidad de usuario")
 plt.tight_layout()
-plt.savefig("CPU-IPC.png")
+
+os.makedirs(nombre_carpeta, exist_ok=True) 
+plt.savefig(nombre_carpeta + "/CPU-IPC.png")

@@ -1,11 +1,13 @@
 import os
+import sys
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 
 # Lista de cantidades de usuarios
-usuarios = [15, 20, 40, 60, 100, 200, 500, 1000, 2000]
-base_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../', 'Resultados')
+usuarios = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
+nombre_carpeta = sys.argv[1]
+base_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../Resultados/', nombre_carpeta)
 
 metricas = ['cache-references', 'cache-misses']
 promedios = {m: [] for m in metricas}
@@ -48,4 +50,6 @@ ax.yaxis.set_major_formatter(ticker.FuncFormatter(lambda x, _: f'{int(x):,}'))
 plt.grid(True)
 plt.legend()
 plt.tight_layout()
-plt.savefig("CPU-cache.png")
+
+os.makedirs(nombre_carpeta, exist_ok=True) 
+plt.savefig(nombre_carpeta + "/CPU-cache.png")

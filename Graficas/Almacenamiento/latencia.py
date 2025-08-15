@@ -1,10 +1,12 @@
 import os
+import sys
 import pandas as pd
 import matplotlib.pyplot as plt
 
 # Lista de usuarios evaluados
-usuarios = [15, 20, 40, 60, 100, 200, 500, 1000, 2000]
-base_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../', 'Resultados')
+usuarios = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
+nombre_carpeta = sys.argv[1]
+base_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../Resultados/', nombre_carpeta)
 
 # Métricas a graficar
 metricas_latencia = {
@@ -48,4 +50,6 @@ plt.xticks(x, usuarios, rotation=45)
 plt.grid(True)
 plt.legend()
 plt.tight_layout()
-plt.savefig("Almacenamiento-Latencia.png")
+
+os.makedirs(nombre_carpeta, exist_ok=True) 
+plt.savefig(nombre_carpeta + "/Almacenamiento-Latencia.png")

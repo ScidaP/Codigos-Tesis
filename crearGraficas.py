@@ -1,5 +1,8 @@
 import os
+import sys
 import subprocess
+
+nombre_carpeta = sys.argv[1]
 
 def ejecutar_scripts_en_carpeta(base_path):
     # Lista las subcarpetas dentro de base_path
@@ -16,7 +19,7 @@ def ejecutar_scripts_en_carpeta(base_path):
             ruta_script = os.path.join(ruta_subcarpeta, archivo)
             print(f"Ejecutando {ruta_script} ...")
             # Ejecuta el script con python
-            resultado = subprocess.run(['python', ruta_script], capture_output=True, text=True)
+            resultado = subprocess.run(['python', ruta_script, nombre_carpeta], capture_output=True, text=True)
             
             if resultado.returncode == 0:
                 print(f"Ejecutado correctamente: {archivo}")
