@@ -1,0 +1,74 @@
+Method,Name,Error,Occurrences
+PUT,Abrir Mesa,CatchResponseError('Fallo al abrir mesa 7'),6
+PUT,Cerrar Mesa,CatchResponseError('Fallo al cerrar mesa 6'),48
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 1 en mesa 3'),47
+PUT,Cerrar Mesa,CatchResponseError('Fallo al cerrar mesa 8'),37
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 3 en mesa 2'),51
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 3 en mesa 3'),34
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 1 en mesa 4'),42
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 4 en mesa 7'),54
+PUT,Abrir Mesa,CatchResponseError('Fallo al abrir mesa 1'),7
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 4 en mesa 4'),50
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 4 en mesa 12'),33
+PUT,Abrir Mesa,CatchResponseError('Fallo al abrir mesa 11'),3
+GET,/Mesas,RemoteDisconnected('Remote end closed connection without response'),562
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 2 en mesa 9'),40
+PUT,Abrir Mesa,CatchResponseError('Fallo al abrir mesa 3'),6
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 3 en mesa 7'),44
+PUT,Cerrar Mesa,CatchResponseError('Fallo al cerrar mesa 9'),49
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 3 en mesa 9'),48
+GET,/Pedidos/5925,RemoteDisconnected('Remote end closed connection without response'),1564
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 2 en mesa 12'),40
+PUT,Cerrar Mesa,CatchResponseError('Fallo al cerrar mesa 2'),45
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 1 en mesa 11'),48
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 2 en mesa 3'),37
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 4 en mesa 9'),43
+GET,/Categorias,HTTPError('500 Server Error: Internal Server Error for url: /Categorias'),1
+PUT,Cerrar Mesa,CatchResponseError('Fallo al cerrar mesa 7'),29
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 3 en mesa 1'),42
+PUT,Cerrar Mesa,CatchResponseError('Fallo al cerrar mesa 10'),40
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 3 en mesa 13'),29
+GET,/Mesas,HTTPError('500 Server Error: Internal Server Error for url: /Mesas'),1
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 1 en mesa 8'),46
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 1 en mesa 1'),47
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 3 en mesa 12'),39
+GET,/Categorias,RemoteDisconnected('Remote end closed connection without response'),2116
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 4 en mesa 2'),41
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 4 en mesa 13'),30
+PUT,Abrir Mesa,CatchResponseError('Fallo al abrir mesa 5'),11
+PUT,Abrir Mesa,CatchResponseError('Fallo al abrir mesa 8'),5
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 1 en mesa 5'),43
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 2 en mesa 5'),49
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 4 en mesa 1'),51
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 1 en mesa 12'),38
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 1 en mesa 9'),48
+GET,/Productos,"ConnectionAbortedError(10053, 'Se ha anulado una conexión establecida por el software en su equipo host', None, 10053, None)",2
+PUT,Abrir Mesa,CatchResponseError('Fallo al abrir mesa 10'),5
+PUT,Cerrar Mesa,CatchResponseError('Fallo al cerrar mesa 1'),51
+PUT,Abrir Mesa,CatchResponseError('Fallo al abrir mesa 2'),8
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 2 en mesa 8'),44
+PUT,Cerrar Mesa,CatchResponseError('Fallo al cerrar mesa 4'),47
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 3 en mesa 11'),53
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 1 en mesa 2'),51
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 1 en mesa 7'),52
+PUT,Cerrar Mesa,CatchResponseError('Fallo al cerrar mesa 3'),47
+PUT,Cerrar Mesa,CatchResponseError('Fallo al cerrar mesa 5'),48
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 2 en mesa 13'),41
+PUT,Abrir Mesa,CatchResponseError('Fallo al abrir mesa 6'),4
+PUT,Abrir Mesa,CatchResponseError('Fallo al abrir mesa 9'),1
+PUT,Abrir Mesa,CatchResponseError('Fallo al abrir mesa 4'),4
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 2 en mesa 11'),45
+GET,/Productos,RemoteDisconnected('Remote end closed connection without response'),71
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 4 en mesa 11'),47
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 1 en mesa 13'),41
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 3 en mesa 4'),48
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 2 en mesa 2'),45
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 4 en mesa 5'),53
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 4 en mesa 8'),43
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 2 en mesa 1'),39
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 3 en mesa 5'),32
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 3 en mesa 8'),42
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 2 en mesa 4'),36
+PUT,Cerrar Mesa,CatchResponseError('Fallo al cerrar mesa 11'),40
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 4 en mesa 3'),41
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 2 en mesa 7'),53

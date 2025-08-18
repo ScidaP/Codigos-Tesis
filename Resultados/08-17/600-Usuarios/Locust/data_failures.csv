@@ -1,0 +1,77 @@
+Method,Name,Error,Occurrences
+PUT,Abrir Mesa,CatchResponseError('Fallo al abrir mesa 7'),103
+PUT,Cerrar Mesa,CatchResponseError('Fallo al cerrar mesa 6'),195
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 1 en mesa 3'),201
+PUT,Cerrar Mesa,CatchResponseError('Fallo al cerrar mesa 8'),199
+GET,/Categorias,"ConnectionAbortedError(10053, 'Se ha anulado una conexión establecida por el software en su equipo host', None, 10053, None)",53
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 3 en mesa 2'),145
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 3 en mesa 3'),142
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 1 en mesa 4'),140
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 4 en mesa 7'),165
+PUT,Abrir Mesa,CatchResponseError('Fallo al abrir mesa 1'),104
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 4 en mesa 4'),135
+GET,/Pedidos/5925,HTTPError('500 Server Error: Internal Server Error for url: /Pedidos/5925'),1
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 4 en mesa 12'),151
+PUT,Abrir Mesa,CatchResponseError('Fallo al abrir mesa 11'),97
+GET,/Mesas,RemoteDisconnected('Remote end closed connection without response'),1154
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 2 en mesa 9'),134
+PUT,Abrir Mesa,CatchResponseError('Fallo al abrir mesa 3'),85
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 3 en mesa 7'),165
+PUT,Cerrar Mesa,CatchResponseError('Fallo al cerrar mesa 9'),172
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 3 en mesa 9'),113
+GET,/Pedidos/5925,RemoteDisconnected('Remote end closed connection without response'),3318
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 2 en mesa 12'),143
+PUT,Cerrar Mesa,CatchResponseError('Fallo al cerrar mesa 2'),164
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 1 en mesa 11'),173
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 2 en mesa 3'),151
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 4 en mesa 9'),130
+GET,/Categorias,HTTPError('500 Server Error: Internal Server Error for url: /Categorias'),2
+GET,/Mesas,"ConnectionAbortedError(10053, 'Se ha anulado una conexión establecida por el software en su equipo host', None, 10053, None)",14
+PUT,Cerrar Mesa,CatchResponseError('Fallo al cerrar mesa 7'),193
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 3 en mesa 1'),151
+PUT,Cerrar Mesa,CatchResponseError('Fallo al cerrar mesa 10'),163
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 3 en mesa 13'),154
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 1 en mesa 8'),144
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 1 en mesa 1'),146
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 3 en mesa 12'),149
+GET,/Categorias,RemoteDisconnected('Remote end closed connection without response'),4419
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 4 en mesa 2'),144
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 4 en mesa 13'),182
+PUT,Abrir Mesa,CatchResponseError('Fallo al abrir mesa 5'),95
+PUT,Abrir Mesa,CatchResponseError('Fallo al abrir mesa 8'),91
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 1 en mesa 5'),166
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 2 en mesa 5'),159
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 4 en mesa 1'),155
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 1 en mesa 12'),131
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 1 en mesa 9'),134
+GET,/Productos,"ConnectionAbortedError(10053, 'Se ha anulado una conexión establecida por el software en su equipo host', None, 10053, None)",24
+PUT,Abrir Mesa,CatchResponseError('Fallo al abrir mesa 10'),112
+PUT,Cerrar Mesa,CatchResponseError('Fallo al cerrar mesa 1'),187
+PUT,Abrir Mesa,CatchResponseError('Fallo al abrir mesa 2'),104
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 2 en mesa 8'),174
+PUT,Cerrar Mesa,CatchResponseError('Fallo al cerrar mesa 4'),168
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 3 en mesa 11'),149
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 1 en mesa 2'),148
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 1 en mesa 7'),136
+PUT,Cerrar Mesa,CatchResponseError('Fallo al cerrar mesa 3'),166
+PUT,Cerrar Mesa,CatchResponseError('Fallo al cerrar mesa 5'),174
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 2 en mesa 13'),142
+PUT,Abrir Mesa,CatchResponseError('Fallo al abrir mesa 6'),85
+GET,/Pedidos/5925,"ConnectionAbortedError(10053, 'Se ha anulado una conexión establecida por el software en su equipo host', None, 10053, None)",26
+PUT,Abrir Mesa,CatchResponseError('Fallo al abrir mesa 9'),84
+PUT,Abrir Mesa,CatchResponseError('Fallo al abrir mesa 4'),101
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 2 en mesa 11'),152
+GET,/Productos,RemoteDisconnected('Remote end closed connection without response'),1141
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 4 en mesa 11'),150
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 1 en mesa 13'),145
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 3 en mesa 4'),138
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 2 en mesa 2'),152
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 4 en mesa 5'),169
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 4 en mesa 8'),145
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 2 en mesa 1'),155
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 3 en mesa 5'),154
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 3 en mesa 8'),137
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 2 en mesa 4'),140
+PUT,Cerrar Mesa,CatchResponseError('Fallo al cerrar mesa 11'),195
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 4 en mesa 3'),151
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 2 en mesa 7'),154
