@@ -24,18 +24,18 @@ class DemoUser(HttpUser):
 
     @task
     def mesas(self):
-        self.client.get("Mesas")
+        self.client.get("/Mesas")
 
 
     @task(3)
     def ver_pedido(self):
-        self.client.get(f"Pedidos/5925")
+        self.client.get(f"/Pedidos/5925")
 
     @task(4)
     def flujo_completo_mesa(self):
 
-        self.client.get("Categorias")
-        self.client.get("Productos")
+        self.client.get("/Categorias")
+        self.client.get("/Productos")
 
         # Elegir mesa, código de servicio y productos aleatorios
         id_mesa, numero_mesa = random.choice(list(MESAS.items()))

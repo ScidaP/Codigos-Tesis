@@ -4,12 +4,13 @@ import sys
 import matplotlib.pyplot as plt
 
 # Rutas base y configuración
-nombre_carpeta = sys.argv[1]
+carpeta_datos = sys.argv[1]  # Carpeta de datos dentro de Resultados/Proxmox/
+carpeta_graficas_nombre = sys.argv[2]  # Nombre de carpeta para guardar gráficas en Resultados/Proxmox/
 usuarios_list = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
 requests_per_second = []
 
 for usuarios in usuarios_list:
-    file_path = os.path.join('Resultados/' + nombre_carpeta, f"{usuarios}-Usuarios", "Locust", "data_stats.csv")
+    file_path = os.path.join('Resultados/Proxmox', carpeta_datos, f"{usuarios}-Usuarios", "Locust", "data_stats.csv")
     
     try:
         with open(file_path, mode="r", encoding="utf-8") as f:
@@ -36,5 +37,6 @@ plt.grid(True)
 plt.xticks(x_positions, usuarios_list)  # Muestra los valores reales como etiquetas
 plt.tight_layout()
 
-os.makedirs(nombre_carpeta, exist_ok=True) 
-plt.savefig(nombre_carpeta + "/failsPorSegundo.png")
+carpeta_graficas = os.path.join('Resultados', 'Proxmox', carpeta_graficas_nombre)
+os.makedirs(carpeta_graficas, exist_ok=True) 
+plt.savefig(os.path.join(carpeta_graficas, "failsPorSegundo.png"))

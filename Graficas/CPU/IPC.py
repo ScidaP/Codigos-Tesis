@@ -5,8 +5,9 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 
 usuarios = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
-nombre_carpeta = sys.argv[1]
-base_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../Resultados/', nombre_carpeta)
+carpeta_datos = sys.argv[1]  # Carpeta de datos dentro de Resultados/Proxmox/
+carpeta_graficas_nombre = sys.argv[2]  # Nombre de carpeta para guardar gráficas en Resultados/Proxmox/
+base_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../Resultados/Proxmox/', carpeta_datos)
 
 metricas = ['cycles', 'instructions']
 promedios = {m: [] for m in metricas}
@@ -71,8 +72,9 @@ lines1, labels1 = ax1.get_legend_handles_labels()
 lines2, labels2 = ax2.get_legend_handles_labels()
 ax1.legend(lines1 + lines2, labels1 + labels2, loc='upper left')
 
-plt.title("Cycles, Instructions e IPC - 20 muestras por cantidad de usuario")
+plt.title("Cycles, Instructions e IPC - 10 muestras por cantidad de usuario")
 plt.tight_layout()
 
-os.makedirs(nombre_carpeta, exist_ok=True) 
-plt.savefig(nombre_carpeta + "/CPU-IPC.png")
+carpeta_graficas = os.path.join('Resultados', 'Proxmox', carpeta_graficas_nombre)
+os.makedirs(carpeta_graficas, exist_ok=True) 
+plt.savefig(os.path.join(carpeta_graficas, "CPU-IPC.png"))

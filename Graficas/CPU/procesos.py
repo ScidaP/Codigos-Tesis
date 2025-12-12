@@ -6,8 +6,9 @@ import matplotlib.ticker as ticker
 
 # Lista de usuarios
 usuarios = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
-nombre_carpeta = sys.argv[1]
-base_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../Resultados/', nombre_carpeta)
+carpeta_datos = sys.argv[1]  # Carpeta de datos dentro de Resultados/Proxmox/
+carpeta_graficas_nombre = sys.argv[2]  # Nombre de carpeta para guardar gráficas en Resultados/Proxmox/
+base_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../Resultados/Proxmox/', carpeta_datos)
 
 # Métricas con sus etiquetas descriptivas
 metricas = {
@@ -43,7 +44,7 @@ plt.figure(figsize=(14, 6))
 for m, label in metricas.items():
     plt.plot(x, promedios[m], marker='o', label=label)
 
-plt.title("Métricas de tiempo promedio del CPU - 20 muestras por cantidad de usuario")
+plt.title("Métricas de tiempo promedio del CPU - 10 muestras por cantidad de usuario")
 plt.xlabel("Cantidad de Usuarios Simultáneos")
 plt.ylabel("Valor Promedio")
 plt.xticks(x, usuarios, rotation=45)
@@ -56,5 +57,6 @@ plt.grid(True)
 plt.legend()
 plt.tight_layout()
 
-os.makedirs(nombre_carpeta, exist_ok=True) 
-plt.savefig(nombre_carpeta + "/CPU-Procesos.png")
+carpeta_graficas = os.path.join('Resultados', 'Proxmox', carpeta_graficas_nombre)
+os.makedirs(carpeta_graficas, exist_ok=True) 
+plt.savefig(os.path.join(carpeta_graficas, "CPU-Procesos.png"))

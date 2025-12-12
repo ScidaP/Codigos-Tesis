@@ -4,8 +4,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 usuarios = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
-nombre_carpeta = sys.argv[1]
-base_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../Resultados/', nombre_carpeta)
+carpeta_datos = sys.argv[1]  # Carpeta de datos dentro de Resultados/Proxmox/
+carpeta_graficas_nombre = sys.argv[2]  # Nombre de carpeta para guardar gráficas en Resultados/Proxmox/
+base_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../Resultados/Proxmox/', carpeta_datos)
 
 metricas_memoria = {
     'buff_avg': 'Buffers usados',
@@ -47,7 +48,7 @@ plt.figure(figsize=(12, 6))
 for k, label in metricas_memoria.items():
     plt.plot(x, promedios[k], marker='o', label=label)
 
-plt.title("Uso de Memoria - 20 muestras por cantidad de usuario")
+plt.title("Uso de Memoria - 10 muestras por cantidad de usuario")
 plt.xlabel("Cantidad de Usuarios Simultáneos")
 plt.ylabel("Megabytes (MB)")
 plt.xticks(x, usuarios)
@@ -55,5 +56,6 @@ plt.grid(True)
 plt.legend()
 plt.tight_layout()
 
-os.makedirs(nombre_carpeta, exist_ok=True) 
-plt.savefig(nombre_carpeta + "/Memoria-Uso.png")
+carpeta_graficas = os.path.join('Resultados', 'Proxmox', carpeta_graficas_nombre)
+os.makedirs(carpeta_graficas, exist_ok=True)
+plt.savefig(os.path.join(carpeta_graficas, "Memoria-Uso.png"))
