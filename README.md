@@ -8,14 +8,22 @@ Finalmente, se reune toda la información para concluir acerca de la mejor opci�
 
 ### Aclaraciones archivos importantes
 
+## Simulación y recolección de datos
+
 1. **proceso_completo.ps1**
   - Se ejecuta la siguiente secuencia por cada cantidad de usuarios: *I.* Limpiar tabla de pedidos (`borrar.sql`), *II.* Empezar simulación de usuarios (`pruebaEstres.py`), *III.* Recolectar datos sobre el desempeño del servidor (`benchmarks/BUCLE.sh`, se ejecuta en el servidor), *IV.* Copiar esos datos del servidor a mi notebook (comando `scp`), y *V.* Limpiar aquellas conexiones que quedaron abiertas (`cerrar_conexiones.sql`). Este código se encarga de ejecutar dicha secuencia. 
 2. **pruebaEstres.py**
   - Este código se ejecuta en una computadora cliente. Aquí aprovecho la herramienta `Locust`, la cual me permite simular tráfico en mi aplicación. Puedo ajustar la cantidad de usuarios, los endpoints solicitados y la frecuencia de las peticiones a cada uno.
 3. **cerrar_conexiones.sql, borrar.sql**
   - Consultas SQL que se ejecutan en el código `proceso_completo.ps1`.
-4. **crearGraficas.py**
-  - Recibe un parámetro: el nombre de la carpeta de la cual se generarán todas las gráficas, contenida en `/Resultados`. Ejemplo: `python crearGraficas.py "08-16"`. Usa los códigos de `/Graficas`.
+
+## Visualización de datos
+1. **crearGraficasSuperpuestas.py** 
+  - Recibe un parámetro: {Proxmox|Debian}. Corresponde a la carpeta dentro de `/Resultados`. El archivo crea las gráficas superpuestas usando TODOS los datos recolectados de la carpeta elegida. Por ejemplo, si se lo corre para Debian, usa todos los datos de `/Resultados/Debian/` para crear la gráfica superpuesta, ignorando los archivos que no son de datos (los que empiezan con la palabra "Graficas" del mismo directorio)
+2. **crearGraficasTodas**
+  - Recibe un parámetro: {Proxmox|Debian}. Misma idea que el archivo anterior. Pero en lugar de crear gráficas superpuestas, crea las gráficas de cada test en particular. Por ejemplo, cuando ejecuta sobre la carpeta `/Resultados/Debian/08-12`, ejecuta todos los scripts de la carpeta `/Graficas/` para ese test en particular.
+3. **crearGraficasCarpeta.py**
+  - Recibe dos parámetros: El nombre de la carpeta del test, y el nombre de la carpeta donde se guardarán las nuevas gráficas de ese test.
 
 ## Motivación
 
