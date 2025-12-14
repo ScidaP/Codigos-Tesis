@@ -1,0 +1,58 @@
+Method,Name,Error,Occurrences
+PUT,Cerrar Mesa,CatchResponseError('Fallo al cerrar mesa 6'),18
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 1 en mesa 3'),13
+PUT,Cerrar Mesa,CatchResponseError('Fallo al cerrar mesa 8'),10
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 3 en mesa 2'),10
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 3 en mesa 3'),18
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 1 en mesa 4'),9
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 4 en mesa 7'),26
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 4 en mesa 4'),13
+GET,/Pedidos/5925,HTTPError('500 Server Error: Internal Server Error for url: /Pedidos/5925'),2
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 4 en mesa 12'),11
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 2 en mesa 9'),18
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 3 en mesa 7'),21
+PUT,Cerrar Mesa,CatchResponseError('Fallo al cerrar mesa 9'),12
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 3 en mesa 9'),19
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 2 en mesa 12'),18
+PUT,Cerrar Mesa,CatchResponseError('Fallo al cerrar mesa 2'),21
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 1 en mesa 11'),15
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 2 en mesa 3'),19
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 4 en mesa 9'),18
+GET,/Categorias,HTTPError('500 Server Error: Internal Server Error for url: /Categorias'),1
+PUT,Cerrar Mesa,CatchResponseError('Fallo al cerrar mesa 7'),16
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 3 en mesa 1'),20
+PUT,Cerrar Mesa,CatchResponseError('Fallo al cerrar mesa 10'),14
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 3 en mesa 13'),14
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 1 en mesa 8'),14
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 1 en mesa 1'),18
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 3 en mesa 12'),20
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 4 en mesa 2'),23
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 4 en mesa 13'),13
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 1 en mesa 5'),20
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 2 en mesa 5'),12
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 4 en mesa 1'),15
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 1 en mesa 12'),14
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 1 en mesa 9'),20
+PUT,Cerrar Mesa,CatchResponseError('Fallo al cerrar mesa 1'),15
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 2 en mesa 8'),16
+PUT,Cerrar Mesa,CatchResponseError('Fallo al cerrar mesa 4'),16
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 3 en mesa 11'),14
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 1 en mesa 2'),25
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 1 en mesa 7'),14
+PUT,Cerrar Mesa,CatchResponseError('Fallo al cerrar mesa 3'),12
+PUT,Cerrar Mesa,CatchResponseError('Fallo al cerrar mesa 5'),11
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 2 en mesa 13'),16
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 2 en mesa 11'),15
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 4 en mesa 11'),17
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 1 en mesa 13'),15
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 3 en mesa 4'),12
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 2 en mesa 2'),10
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 4 en mesa 5'),16
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 4 en mesa 8'),17
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 2 en mesa 1'),18
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 3 en mesa 5'),21
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 3 en mesa 8'),21
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 2 en mesa 4'),16
+PUT,Cerrar Mesa,CatchResponseError('Fallo al cerrar mesa 11'),17
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 4 en mesa 3'),13
+POST,Agregar Item,CatchResponseError('Fallo al agregar item 2 en mesa 7'),6
