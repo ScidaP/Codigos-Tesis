@@ -19,9 +19,9 @@ carpetas = sorted(todas_las_carpetas)  # Ordenar para consistencia
 
 usuarios = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
 
-# Solo graficar cache_avg
-metrica = "cache_avg"
-label_metrica = "Memoria en caché"
+# Solo graficar transfer_MB
+metrica = "transfer_MB"
+label_metrica = "Transferencia"
 
 plt.figure(figsize=(12, 7))
 
@@ -30,19 +30,18 @@ for carpeta in carpetas:
     promedios = []
 
     for u in usuarios:
-        path_csv = os.path.join(base_path, f"{u}-Usuarios", "Datos_CSV", "memoria.csv")
+        path_csv = os.path.join(base_path, f"{u}-Usuarios", "Datos_CSV", "red.csv")
         if not os.path.exists(path_csv):
             print(f"⚠️ Archivo no encontrado: {path_csv}")
             promedios.append(None)
             continue
 
         df = pd.read_csv(path_csv, delimiter=';')
-        df.columns = df.columns.str.strip()
         df.replace(',', '.', regex=True, inplace=True)
 
         if metrica in df.columns:
             try:
-                df[metrica] = df[metrica].astype(float) / 1024  # convertir a MB
+                df[metrica] = df[metrica].astype(float)
                 promedios.append(df[metrica].mean())
             except Exception as e:
                 print(f"❌ Error en '{metrica}' de {u} usuarios: {e}")
@@ -55,9 +54,9 @@ for carpeta in carpetas:
     plt.plot(usuarios, promedios, marker='o', linestyle='-', label=carpeta)
 
 # Configuración general de la gráfica
-plt.title("Comparación de Memoria en caché según cantidad de usuarios")
+plt.title("Comparación de Transferencia de datos según cantidad de usuarios")
 plt.xlabel("Cantidad de usuarios")
-plt.ylabel("Memoria en caché (MB)")
+plt.ylabel("Transferencia (MB)")
 plt.xticks(usuarios)  # mostrar 100, 200, ... 1000
 plt.grid(True)
 plt.legend(title="Carpeta de resultados", fontsize=8)
@@ -66,4 +65,5 @@ plt.tight_layout()
 # Guardar en archivo
 carpeta_graficas = os.path.join(root_dir, 'Resultados', plataforma, 'Graficas_Superpuestas')
 os.makedirs(carpeta_graficas, exist_ok=True)
-plt.savefig(os.path.join(carpeta_graficas, "Comparacion_Memoria_Cache.png"))
+plt.savefig(os.path.join(carpeta_graficas, "Comparacion_Transferencia_Red.png"))
+

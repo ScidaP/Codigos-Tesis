@@ -33,3 +33,4 @@ def ejecutar_scripts_en_carpeta(base_path):
 if __name__ == "__main__":
     carpeta_scripts = "Graficas"
     ejecutar_scripts_en_carpeta(carpeta_scripts)
+

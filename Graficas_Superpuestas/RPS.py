@@ -1,14 +1,18 @@
 import csv
 import os
+import sys
 import matplotlib.pyplot as plt
 
-# Obtener todas las carpetas en Resultados/Proxmox/ (excluyendo las que empiezan con "Graficas_")
+# Parámetro: "Debian" o "Proxmox"
+plataforma = sys.argv[1] if len(sys.argv) > 1 else "Proxmox"
+
+# Obtener todas las carpetas en Resultados/{plataforma}/ (excluyendo las que empiezan con "Graficas_")
 script_dir = os.path.dirname(os.path.abspath(__file__))
 # Subir un nivel desde Graficas_Superpuestas/ a la raíz del proyecto
 root_dir = os.path.dirname(script_dir)
-proxmox_path = os.path.join(root_dir, 'Resultados', 'Proxmox')
-todas_las_carpetas = [f for f in os.listdir(proxmox_path) 
-                      if os.path.isdir(os.path.join(proxmox_path, f)) 
+resultados_path = os.path.join(root_dir, 'Resultados', plataforma)
+todas_las_carpetas = [f for f in os.listdir(resultados_path) 
+                      if os.path.isdir(os.path.join(resultados_path, f)) 
                       and not f.startswith('Graficas_')]
 
 carpetas = sorted(todas_las_carpetas)  # Ordenar para consistencia
@@ -21,7 +25,7 @@ for carpeta in carpetas:
     requests_per_second = []
 
     for usuarios in usuarios_list:
-        file_path = os.path.join(proxmox_path, carpeta, f"{usuarios}-Usuarios", "Locust", "data_stats.csv")
+        file_path = os.path.join(resultados_path, carpeta, f"{usuarios}-Usuarios", "Locust", "data_stats.csv")
         
         try:
             with open(file_path, mode="r", encoding="utf-8") as f:
@@ -48,7 +52,7 @@ plt.legend(title="Carpeta de resultados")
 plt.tight_layout()
 
 # Guardar en un archivo de salida
-carpeta_graficas = os.path.join(root_dir, 'Resultados', 'Proxmox', 'Graficas_Superpuestas')
+carpeta_graficas = os.path.join(root_dir, 'Resultados', plataforma, 'Graficas_Superpuestas')
 os.makedirs(carpeta_graficas, exist_ok=True)
 plt.savefig(os.path.join(carpeta_graficas, "Comparacion_RPS.png"))
 
