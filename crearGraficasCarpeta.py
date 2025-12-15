@@ -2,10 +2,12 @@ import os
 import sys
 import subprocess
 
-# Primer parámetro: carpeta de datos dentro de Resultados/Proxmox/
+# Primer parámetro: carpeta de datos dentro de Resultados/{plataforma}/
 carpeta_datos = sys.argv[1]
-# Segundo parámetro: nombre de la carpeta donde se guardan las gráficas en Resultados/Proxmox/
+# Segundo parámetro: nombre de la carpeta donde se guardan las gráficas en Resultados/{plataforma}/
 carpeta_graficas = sys.argv[2]
+# Tercer parámetro: plataforma (Debian, Proxmox, Proxmox_Triple_Sucursal, etc.)
+plataforma = sys.argv[3] if len(sys.argv) > 3 else "Proxmox"
 
 def ejecutar_scripts_en_carpeta(base_path):
     # Lista las subcarpetas dentro de base_path
@@ -21,8 +23,8 @@ def ejecutar_scripts_en_carpeta(base_path):
         for archivo in archivos_py:
             ruta_script = os.path.join(ruta_subcarpeta, archivo)
             print(f"Ejecutando {ruta_script} ...")
-            # Ejecuta el script con python pasando ambos parámetros
-            resultado = subprocess.run(['python', ruta_script, carpeta_datos, carpeta_graficas], capture_output=True, text=True)
+            # Ejecuta el script con python pasando los parámetros (carpeta_datos, carpeta_graficas, plataforma)
+            resultado = subprocess.run(['python', ruta_script, carpeta_datos, carpeta_graficas, plataforma], capture_output=True, text=True)
             
             if resultado.returncode == 0:
                 print(f"Ejecutado correctamente: {archivo}")

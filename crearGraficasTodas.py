@@ -4,13 +4,13 @@ import subprocess
 
 # Parámetro: "Debian" o "Proxmox"
 if len(sys.argv) < 2:
-    print("Uso: python crearGraficasTodas.py <Debian|Proxmox>")
+    print("Uso: python crearGraficasTodas.py <Debian|Proxmox|Proxmox_Triple_Sucursal>")
     sys.exit(1)
 
 plataforma = sys.argv[1]
 
-if plataforma not in ["Debian", "Proxmox"]:
-    print(f"Error: La plataforma debe ser 'Debian' o 'Proxmox'. Se recibió: {plataforma}")
+if plataforma not in ["Debian", "Proxmox", "Proxmox_Triple_Sucursal"]:
+    print(f"Error: La plataforma debe ser 'Debian' o 'Proxmox' o 'Proxmox_Triple_Sucursal'. Se recibió: {plataforma}")
     sys.exit(1)
 
 # Obtener la ruta del script actual y construir la ruta a Resultados
@@ -45,7 +45,7 @@ for carpeta in carpetas:
     print(f"{'='*60}")
     
     # Ejecutar crearGraficasCarpeta.py con los parámetros correspondientes
-    comando = ['python', 'crearGraficasCarpeta.py', carpeta, nombre_carpeta_graficas]
+    comando = ['python', 'crearGraficasCarpeta.py', carpeta, nombre_carpeta_graficas, plataforma]
     resultado = subprocess.run(comando, capture_output=True, text=True)
     
     if resultado.returncode == 0:

@@ -4,9 +4,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 usuarios = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
-carpeta_datos = sys.argv[1]  # Carpeta de datos dentro de Resultados/Proxmox/
-carpeta_graficas_nombre = sys.argv[2]  # Nombre de carpeta para guardar gráficas en Resultados/Proxmox/
-base_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../Resultados/Proxmox/', carpeta_datos)
+carpeta_datos = sys.argv[1]  # Carpeta de datos dentro de Resultados/{plataforma}/
+carpeta_graficas_nombre = sys.argv[2]  # Nombre de carpeta para guardar gráficas en Resultados/{plataforma}/
+plataforma = sys.argv[3] if len(sys.argv) > 3 else "Proxmox"
+base_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../Resultados', plataforma, carpeta_datos)
 metricas = {
     'read_bw_MBps': 'Lectura (MB/s)',
     'write_bw_MBps': 'Escritura (MB/s)'
@@ -16,7 +17,7 @@ promedios = {m: [] for m in metricas}
 for u in usuarios:
     path_csv = os.path.join(base_path, f"{u}-Usuarios", "Datos_CSV", "almacenamiento.csv")
     if not os.path.exists(path_csv):
-        print(f"⚠️ Archivo no encontrado: {path_csv}")
+        print(f"Archivo no encontrado: {path_csv}")
         for m in promedios:
             promedios[m].append(None)
         continue
@@ -31,10 +32,10 @@ for u in usuarios:
             if m in df.columns:
                 promedios[m].append(df[m].mean())
             else:
-                print(f"❌ Columna faltante: {m} en {path_csv}")
+                print(f"Columna faltante: {m} en {path_csv}")
                 promedios[m].append(None)
     except Exception as e:
-        print(f"❌ Error procesando {path_csv}: {e}")
+        print(f"Error procesando {path_csv}: {e}")
         for m in promedios:
             promedios[m].append(None)
 
@@ -55,6 +56,6 @@ plt.legend()
 plt.tight_layout()
 
 # Crear carpeta para guardar
-carpeta_graficas = os.path.join('Resultados', 'Proxmox', carpeta_graficas_nombre)
+carpeta_graficas = os.path.join('Resultados', plataforma, carpeta_graficas_nombre)
 os.makedirs(carpeta_graficas, exist_ok=True) 
 plt.savefig(os.path.join(carpeta_graficas, "Almacenamiento-AnchoBanda.png"))

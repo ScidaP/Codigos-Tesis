@@ -4,9 +4,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 usuarios = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
-carpeta_datos = sys.argv[1]  # Carpeta de datos dentro de Resultados/Proxmox/
-carpeta_graficas_nombre = sys.argv[2]  # Nombre de carpeta para guardar gráficas en Resultados/Proxmox/
-base_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../Resultados/Proxmox/', carpeta_datos)
+carpeta_datos = sys.argv[1]  # Carpeta de datos dentro de Resultados/{plataforma}/
+carpeta_graficas_nombre = sys.argv[2]  # Nombre de carpeta para guardar gráficas en Resultados/{plataforma}/
+plataforma = sys.argv[3] if len(sys.argv) > 3 else "Proxmox"
+base_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../Resultados', plataforma, carpeta_datos)
 
 metricas_memoria = {
     'buff_avg': 'Buffers usados',
@@ -18,7 +19,7 @@ promedios = {k: [] for k in metricas_memoria}
 for u in usuarios:
     path_csv = os.path.join(base_path, f"{u}-Usuarios", "Datos_CSV", "memoria.csv")
     if not os.path.exists(path_csv):
-        print(f"⚠️ Archivo no encontrado: {path_csv}")
+        print(f"Archivo no encontrado: {path_csv}")
         for k in metricas_memoria:
             promedios[k].append(None)
         continue
@@ -34,10 +35,10 @@ for u in usuarios:
                 df[col] = df[col].astype(float) / 1024
                 promedios[col].append(df[col].mean())
             except Exception as e:
-                print(f"❌ Error en '{col}' de {u} usuarios: {e}")
+                print(f"Error en '{col}' de {u} usuarios: {e}")
                 promedios[col].append(None)
         else:
-            print(f"❌ Columna '{col}' no encontrada en archivo {u} usuarios")
+            print(f"Columna '{col}' no encontrada en archivo {u} usuarios")
             promedios[col].append(None)
 
 # ─── Gráfico ───────────────────────────────────────
@@ -56,6 +57,6 @@ plt.grid(True)
 plt.legend()
 plt.tight_layout()
 
-carpeta_graficas = os.path.join('Resultados', 'Proxmox', carpeta_graficas_nombre)
+carpeta_graficas = os.path.join('Resultados', plataforma, carpeta_graficas_nombre)
 os.makedirs(carpeta_graficas, exist_ok=True)
 plt.savefig(os.path.join(carpeta_graficas, "Memoria-Uso.png"))
