@@ -2,6 +2,9 @@
     [string]$fecha
 )
 
+# Iniciar cronómetro
+$tiempoInicio = Get-Date
+
 Set-Location (Split-Path -Parent $MyInvocation.MyCommand.Definition)
 
 # Definir IPs de las 3 sucursales
@@ -102,3 +105,14 @@ for ($i = 1; $i -le 10; $i++) {
 }
 
 Write-Host "Todo el proceso finalizó para las 10 iteraciones." -ForegroundColor Green
+
+# Calcular y mostrar tiempo total transcurrido
+$tiempoFin = Get-Date
+$tiempoTranscurrido = $tiempoFin - $tiempoInicio
+
+# Calcular horas y minutos totales
+$horasTotales = [math]::Floor($tiempoTranscurrido.TotalHours)
+$minutosRestantes = $tiempoTranscurrido.Minutes
+$mensajeTiempo = "$horasTotales hora/s y $minutosRestantes minuto/s"
+
+Write-Host "Tiempo total transcurrido: $mensajeTiempo" -ForegroundColor Green
